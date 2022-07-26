@@ -105,7 +105,7 @@ function photographerFactory(data, mediaAll) {
         span.textContent = numLikes;
     
         const i = document.createElement("i");
-        i.classList.add("far");
+        i.classList.add("fas");
         i.classList.add("fa-heart");
     
         const p = document.createElement("p");
@@ -173,7 +173,7 @@ function mediaFactory(media, photographers, index) {
             if (e.code == "Enter") {
              showLightbox(title, source, type, id) 
             }
-        })
+        });
 
         type == "image" &&
       thumbnail.setAttribute("alt", "Vignette de media : " + title);
@@ -192,7 +192,7 @@ function mediaFactory(media, photographers, index) {
         likeTag.textContent = likes;
 
         const imageLike = document.createElement("i");
-        imageLike.classList.add("fas");
+        imageLike.classList.add("far");
         imageLike.classList.add("fa-heart");
 
         //Je crée un lien qui va me permettre de faire apparaître la page de profil
@@ -221,7 +221,7 @@ function mediaFactory(media, photographers, index) {
     };
 }
 
-//Fonction qui permet d'incrémenter et de décrémenter le nombre de likes
+//Fonction qui permet d'incrémenter et de décrémenter le nombre de likes :
 function addLikes(likeTag, imageLike) {
     if (imageLike.classList.contains("far")) {
         likeTag.textContent++;

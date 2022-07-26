@@ -30,7 +30,7 @@ function lightboxContent(title, source, type, id, lightbox) {
   
 
   //Écouteur d'événement pour les touches claviers
-  document.addEventListener("keydown", keydown, false);
+document.addEventListener("keydown", keydown, true);
   function keydown(e) {
     if (e.code == "ArrowRight") {
       nextLightbox(source, id);

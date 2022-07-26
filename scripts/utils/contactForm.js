@@ -1,6 +1,7 @@
 // DOM Elements 
 const regexName = /[a-zA-Z]/;
 const regexEmail = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+const main = document.getElementById('main');
 const first = document.getElementById("first");
 const last = document.getElementById("last");
 const email = document.getElementById("email");
@@ -14,15 +15,24 @@ const titleName = document.querySelector('.contactModalName');
 
 // Fonctions 
 
-// Fermeture du modal 
-
+// Ouverture de la modale
 function displayModal() {
   modal.style.display = "flex";
   titleName.textContent = photographerName;
+
+  main.setAttribute('aria-hidden', 'false');
+  modal.setAttribute('aria-hidden', 'false');
+  
+  document.getElementById('first').focus();
 }
+
+// Fermeture de la modale
 
 function closeModal() {
   modal.style.display = "none";
+
+  main.setAttribute('aria-hidden', 'true');
+  modal.setAttribute('aria-hidden', 'false');
 }
 
 function keydown(e) {
