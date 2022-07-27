@@ -11,7 +11,7 @@ const form = document.getElementById("contactForm");
 const btnSubmit = document.querySelector("#submit");
 const inputs = document.querySelectorAll('input,textarea');
 const titleName = document.querySelector('.contactModalName');
-
+const modalOnly = document.getElementById('modal');
 
 // Fonctions 
 
@@ -20,8 +20,8 @@ function displayModal() {
   modal.style.display = "flex";
   titleName.textContent = photographerName;
 
-  main.setAttribute('aria-hidden', 'false');
-  modal.setAttribute('aria-hidden', 'false');
+  main.setAttribute('aria-hidden', 'true');
+  modalOnly.setAttribute('aria-hidden', 'false');
   
   document.getElementById('first').focus();
 }
@@ -31,8 +31,8 @@ function displayModal() {
 function closeModal() {
   modal.style.display = "none";
 
-  main.setAttribute('aria-hidden', 'true');
-  modal.setAttribute('aria-hidden', 'false');
+  main.setAttribute('aria-hidden', 'false');
+  modalOnly.setAttribute('aria-hidden', 'true');
 }
 
 function keydown(e) {

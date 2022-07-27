@@ -343,7 +343,7 @@ select {
     animation: lightboxIn 0.5s;
   }
   
-  @keyframes lightboxIn {
+    @keyframes lightboxIn {
     from {
       opacity: 0;
     }

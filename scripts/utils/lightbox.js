@@ -28,9 +28,8 @@ function lightboxContent(title, source, type, id, lightbox) {
   prev.classList.add("lightbox__prev");
   prev.addEventListener("click", () => prevLightbox(source, id));
   
-
   //Écouteur d'événement pour les touches claviers
-document.addEventListener("keydown", keydown, true);
+  document.addEventListener("keydown", keydown, true);
   function keydown(e) {
     if (e.code == "ArrowRight") {
       nextLightbox(source, id);
@@ -39,7 +38,7 @@ document.addEventListener("keydown", keydown, true);
     } else if (e.code == "Escape") {
       closeLightbox();
     }
-    document.removeEventListener("keydown", keydown, false); //évite la redondance
+    document.removeEventListener("keydown", keydown, true); //évite la redondance
   }
 
   //Création de la div de la lightbox de l'image
@@ -52,12 +51,12 @@ document.addEventListener("keydown", keydown, true);
       ? document.createElement("img")
       : document.createElement("video");
 
-  type == "video" && content.setAttribute("controls", true);
+  type == "video" && content.setAttribute("controls", false);
   
-  type == "video" && content.setAttribute("autoplay", true);
+  type == "video" && content.setAttribute("autoplay", false);
   content.setAttribute("src", source);
   content.classList.add("thumbnail");
-  content.setAttribute("alt", "image");
+  content.setAttribute("alt", title);
   //Création du titre de l'image
   const titleText = document.createElement("h2");
   titleText.textContent = title;
